@@ -34,6 +34,7 @@ class ProfileScreen extends StatelessWidget {
             const Spacer(),
             UpdateButton(onPressed: () {}),
             const SizedBox(height: 20),
+            
           ],
         ),
       ),
