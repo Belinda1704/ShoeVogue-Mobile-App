@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339597063700",
+    "project_id": "shoe-vogue-app",
+    "storage_bucket": "shoe-vogue-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339597063700:android:9aa8f7ca84822807095901",
+        "android_client_info": {
+          "package_name": "com.example.shoe_vogue_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPs0O3uZdNf8IyK7fDEH7_zd1b87y8zl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
