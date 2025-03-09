@@ -3,42 +3,44 @@ import 'package:provider/provider.dart';
 import '../providers/profile_provider.dart';
 
 class ProfileCard extends StatelessWidget {
-  const ProfileCard({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return Consumer<ProfileProvider>(
-      builder: (context, profile, child) {
-        return Container(
-          padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
+    final user = Provider.of<ProfileProvider>(context).user;
+
+    return Container(
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16), // More rounded
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 6,
+            spreadRadius: 2,
           ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset('assets/profile_image.png', width: 60, height: 60),
-              ),
-              const SizedBox(width: 16),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(profile.name, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                    Text(profile.email, style: const TextStyle(color: Colors.grey)),
-                    Text(profile.phone, style: const TextStyle(color: Colors.grey)),
-                    Text(profile.address, style: const TextStyle(color: Colors.grey, fontSize: 12)),
-                  ],
-                ),
-              ),
-              Text("change", style: TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
-            ],
+        ],
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 35,
+            backgroundImage: AssetImage("assets/profile_image.png"), // Updated image path
           ),
-        );
-      },
+          SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(user.name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                SizedBox(height: 4),
+                Text(user.email, style: TextStyle(color: Colors.grey)),
+                Text(user.phone, style: TextStyle(color: Colors.grey)),
+                Text(user.address, style: TextStyle(color: Colors.grey)),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
+import '../models/user_model.dart';
 
 class ProfileProvider with ChangeNotifier {
-  String _name = "Marvis Ighedosa";
-  String _email = "Dosamarvis@gmail.com";
-  String _phone = "+234 9011039271";
-  String _address = "No 15 uti street off ovie palace road effurun delta state";
+  UserModel _user = UserModel(
+    name: "Marvis Ighedosa",
+    email: "Dosamarvis@gmail.com",
+    phone: "+234 9011039271",
+    address: "No 15 Uti street off Ovie Palace Road, Effurun, Delta State",
+    profileImage: "assets/profile.png", // Replace with your asset
+  );
 
-  String get name => _name;
-  String get email => _email;
-  String get phone => _phone;
-  String get address => _address;
+  UserModel get user => _user;
 
-  void updateProfile(String name, String email, String phone, String address) {
-    _name = name;
-    _email = email;
-    _phone = phone;
-    _address = address;
+  void updateUser(UserModel newUser) {
+    _user = newUser;
     notifyListeners();
   }
 }
