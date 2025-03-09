@@ -7,6 +7,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: Color(0xFFF8F8F8), // Light grey background
       body: SafeArea(
         child: Padding(
@@ -74,6 +75,35 @@ class ProfileScreen extends StatelessWidget {
               UpdateButton(onPressed: () {}),
             ],
           ),
+=======
+      backgroundColor: Colors.grey[200],
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () {},
+        ),
+        title: const Text(
+          "My profile",
+          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text("Personal details", style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+            const SizedBox(height: 8),
+            const ProfileCard(),
+            const SizedBox(height: 20),
+            const Spacer(),
+            UpdateButton(onPressed: () {}),
+            const SizedBox(height: 20),
+            
+          ],
+>>>>>>> 78e7d87d33a252f590c2e9fab99f6f3cc93056f6
         ),
       ),
     );
